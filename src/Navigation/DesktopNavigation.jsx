@@ -7,7 +7,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Badge, Button, Dialog, DialogActions, DialogContent, Menu, MenuItem, Slide, Tooltip, Typography } from '@mui/material';
 import { ContextFunction } from '../Context/Context';
 import { toast } from 'react-toastify';
-import { getCart, getWishList, handleLogOut, handleClickOpen, handleClose, Transition } from '../Constants/Constant'
+import { getCart, getWishList, handleLogOut, handleClickOpen, handleClose, Transition } from '../Constants/Constant';
 
 const DesktopNavigation = () => {
 
@@ -82,7 +82,15 @@ const DesktopNavigation = () => {
                     </NavLink>
                   </Tooltip>
                 </li>
+                
             }
+            <li className="nav-links">
+                  <Tooltip title='ConnectToEWallet'>
+                    <NavLink to='/eWallet'>
+                    <Button variant='contained'>Connect to EWallet</Button>
+                    </NavLink>
+                  </Tooltip>
+                </li>
           </ul>
         </div>
       </nav >
