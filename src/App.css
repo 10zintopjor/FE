@@ -26,14 +26,6 @@ a {
   /* text-align: center; */
 }
 
-.active {
-
-
-  color: #1976d2;
-  background-color: transparent;
-
-
-}
 
 .toastContainerBox {
   display: flex;

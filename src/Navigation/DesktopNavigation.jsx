@@ -27,73 +27,51 @@ const DesktopNavigation = () => {
       <nav className='nav'>
         <div className="logo">
           <Link to='/'>
-            <span >eTibet.Store</span>
+            <span > Etibet - Service,Solution,Support</span>
           </Link>
         </div>
         <div className="nav-items">
           <ul className="nav-items">
-            <li className="nav-links">
-              <NavLink to='/'>
-                <span className='nav-icon-span'>  Home</span>
-              </NavLink>
+          <li className="nav-links">
+                <NavLink to="/">
+                  <span className='nav-icon-span'>E-Store</span>
+                </NavLink>
             </li>
-            {/* <li className="nav-links">
-              <NavLink to='/contact'>
-                <span className='nav-icon-span'>  Contact Us</span>
-              </NavLink>
-            </li> */}
 
             <li className="nav-links">
-              <Tooltip title='Cart'>
                 <NavLink to="/cart">
-                  <span className='nav-icon-span'>Cart    <Badge badgeContent={setProceed ? cart.length : 0}> <AiOutlineShoppingCart className='nav-icon' /></Badge></span>
+                  <span className='nav-icon-span'>Services</span>
                 </NavLink>
-              </Tooltip>
             </li>
             <li className="nav-links">
-              <Tooltip title='Wishlist'>
                 <NavLink to="/wishlist">
-                  <span className='nav-icon-span'>Wishlist  <Badge badgeContent={setProceed ? wishlistData.length : 0}> <AiOutlineHeart className='nav-icon' /></Badge></span>
+                  <span className='nav-icon-span'>Wallet</span>
                 </NavLink>
-              </Tooltip>
+            </li>
+            <li className="nav-links">
+                <NavLink to="/deals">
+                  <span className='nav-icon-span'>Deals</span>
+                </NavLink>
+            </li>
+            <li className="nav-links">
+                <NavLink to="/ads">
+                  <span className='nav-icon-span'>Ads</span>
+                </NavLink>
+            </li>
+            <li className="nav-links cs">
+                <NavLink to="/custonmersupport">
+                  <span className='nav-icon-span'>Customer Support</span>
+                </NavLink>
             </li>
 
-            {
-              setProceed ?
-                <>
-                  <li className="nav-links">
-                    <Tooltip title='Profile'>
-                      <NavLink to='/update'>
-                        <span className='nav-icon-span'>  <CgProfile style={{ fontSize: 29, marginTop: 7,marginRight:10 }} /></span>
-                      </NavLink>
-                    </Tooltip>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'center', justifyItems: 'center' }} onClick={() => handleClickOpen(setOpenAlert)}>
-                    <Button variant='contained' className='nav-icon-span' sx={{ marginBottom: 1 }} endIcon={<FiLogOut />}>
-                      <Typography variant='button'> Logout</Typography>
-                    </Button>
-                  </li>
-                </>
-                :
-                <li className="nav-links">
-                  <Tooltip title='Login'>
-                    <NavLink to='/login'>
-                      <span className='nav-icon-span'>   <CgProfile style={{ fontSize: 29, marginTop: 7 }} /></span>
-                    </NavLink>
-                  </Tooltip>
-                </li>
-                
-            }
-            <li className="nav-links">
-                  <Tooltip title='ConnectToEWallet'>
-                    <NavLink to='/eWallet'>
-                    <Button variant='contained'>Connect to EWallet</Button>
-                    </NavLink>
-                  </Tooltip>
-                </li>
+            
           </ul>
         </div>
       </nav >
+
+
+
+      
       <Dialog
         open={openAlert}
         TransitionComponent={Transition}
