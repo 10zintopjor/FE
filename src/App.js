@@ -10,7 +10,6 @@ import MobileNavigation from './Navigation/MobileNavigation';
 import DesktopNavigation from './Navigation/DesktopNavigation';
 import Wishlist from './Pages/WhisList/Wishlist';
 import PaymentSuccess from './Pages/Payment/PaymentSuccess';
-import { Flip, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CheckoutForm from './Components/Checkout/CheckoutForm';
 import UpdateDetails from './Pages/Update_User/UpdateDetails';
@@ -29,7 +28,6 @@ import SingleProduct from './Admin/Pages/SingleProduct';
 function App() {
   return (
     <>
-      <ToastContainer toastClassName='toastContainerBox' transition={Flip} position='top-center' />
       <Router>
         <DesktopNavigation />
         <div className='margin'>
