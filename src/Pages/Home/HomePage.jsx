@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { Container } from '@mui/material';
-import Store from '../../Components/Leftnav/Store';
 import ProductCard from "../../Components/Card/ProductCard/ProductCard"
+import Store from '../../Components/Leftnav/Store';
 
 const HomePage = () => {
   const [bannerData, setBannerData] = useState([]);
