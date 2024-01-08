@@ -1,27 +1,8 @@
 import './Desktop.css'
-import React, { useContext, useEffect, useState } from 'react'
-import { AiOutlineHeart, AiOutlineShoppingCart, AiFillCloseCircle } from 'react-icons/ai'
-import { CgProfile } from 'react-icons/cg'
-import { FiLogOut } from 'react-icons/fi'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Badge, Button, Dialog, DialogActions, DialogContent, Menu, MenuItem, Slide, Tooltip, Typography } from '@mui/material';
-import { ContextFunction } from '../Context/Context';
-import { toast } from 'react-toastify';
-import { getCart, getWishList, handleLogOut, handleClickOpen, handleClose, Transition } from '../Constants/Constant';
+import { Link, NavLink } from 'react-router-dom';
 
 const DesktopNavigation = () => {
-
-  const { cart, setCart, wishlistData, setWishlistData } = useContext(ContextFunction)
-  const [openAlert, setOpenAlert] = useState(false);
-  const navigate = useNavigate()
-  let authToken = localStorage.getItem('Authorization');
-  let setProceed = authToken !== null ? true : false
-  useEffect(() => {
-    getCart(setProceed, setCart, authToken)
-    getWishList(setProceed, setWishlistData, authToken)
-  }, [])
-
-
+ 
   return (
     <>
       <nav className='nav'>
@@ -68,26 +49,6 @@ const DesktopNavigation = () => {
           </ul>
         </div>
       </nav >
-
-
-
-      
-      <Dialog
-        open={openAlert}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogContent sx={{ width: { xs: 280, md: 350, xl: 400 }, display: 'flex', justifyContent: 'center' }}>
-          <Typography variant='h6'>  Do You Want To Logout?</Typography>
-        </DialogContent>
-        <DialogActions sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
-          <Link to="/">
-            <Button variant='contained' endIcon={<FiLogOut />} color='primary' onClick={() => handleLogOut(setProceed, toast, navigate, setOpenAlert)}>Logout</Button></Link>
-          <Button variant='contained' color='error' endIcon={<AiFillCloseCircle />} onClick={() => handleClose(setOpenAlert)}>Close</Button>
-        </DialogActions>
-      </Dialog>
     </>
 
   )
