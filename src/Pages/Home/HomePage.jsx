@@ -11,7 +11,7 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         window.scroll(0, 0);
-        const response = await axios.get("http://127.0.0.1:8000/api/getrandomproducts");
+        const response = await axios.get("/api/getrandomproducts");
         setBannerData(response.data.products);
       } catch (error) {
         console.error("Error fetching data:", error);
