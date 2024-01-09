@@ -9,15 +9,15 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <>
-      {/* <Router>
+      <Router>
         <DesktopNavigation />
         <div className='margin'>
           <Routes>
             <Route path='/' index element={<HomePage />} />
           </Routes>
         </div>
-      </Router > */}
-      <p>this is running</p>
+      </Router >
+    
 
 
     </>
